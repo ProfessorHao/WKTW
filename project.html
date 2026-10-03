@@ -1,0 +1,606 @@
+/* =========================================
+   WKTW // 2000s UNDERGROUND STYLE
+   RED / BLACK / GRUNGE / WEB 1.0
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #050505;
+    color: #ddd;
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+
+    /* Subtle dirty texture */
+    background-image:
+        radial-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+        radial-gradient(rgba(255,0,0,0.025) 1px, transparent 1px);
+
+    background-size: 7px 7px, 11px 11px;
+    background-position: 0 0, 4px 3px;
+}
+
+
+/* =========================================
+   TOP BAR
+========================================= */
+
+.top-bar {
+    background: #a90000;
+    color: #000;
+    min-height: 28px;
+    padding: 6px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #300000;
+    font-family: monospace;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+nav {
+    background: #090909;
+    min-height: 95px;
+    padding: 18px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 3px solid #b00000;
+    box-shadow:
+        0 4px 0 #300000,
+        0 7px 0 #050505;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    line-height: 0.8;
+}
+
+.logo span {
+    color: #c40000;
+    /* Applied Rubik Glitch font here */
+    font-family: 'Rubik Glitch', Impact, Haettenschweiler, sans-serif;
+    font-size: 48px;
+    font-weight: 900;
+    font-style: italic;
+    letter-spacing: -1px;
+    transform: rotate(-2deg);
+    text-shadow:
+        3px 3px 0 #000,
+        5px 5px 0 #450000;
+}
+
+.logo small {
+    color: #777;
+    font-family: monospace;
+    font-size: 8px;
+    letter-spacing: 4px;
+    margin-left: 5px;
+    margin-top: 6px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 5px;
+}
+
+nav li a {
+    display: block;
+    color: #bbb;
+    text-decoration: none;
+    background: #151515;
+    border: 1px solid #444;
+    border-bottom-color: #080808;
+    padding: 9px 14px;
+    font-family: monospace;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: 3px 3px 0 #000;
+    transform: skew(-3deg);
+}
+
+nav li a:hover {
+    color: #fff;
+    background: #a00000;
+    border-color: #d00000;
+    transform:
+        skew(-3deg)
+        translate(2px, 2px);
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+    min-height: 520px;
+    padding: 65px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background-color: #070707;
+    background-image:
+        linear-gradient(rgba(120,0,0,0.18) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(120,0,0,0.18) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        repeating-linear-gradient(
+            0deg,
+            rgba(255,255,255,0.025),
+            rgba(255,255,255,0.025) 1px,
+            transparent 1px,
+            transparent 4px
+        );
+    opacity: 0.5;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: #550000;
+    filter: blur(130px);
+    opacity: 0.25;
+    pointer-events: none;
+}
+
+.hero-box {
+    width: 100%;
+    max-width: 850px;
+    padding: 45px 35px;
+    position: relative;
+    z-index: 2;
+    background:
+        linear-gradient(
+            135deg,
+            #0d0d0d,
+            #050505
+        );
+    border: 2px solid #8d0000;
+    box-shadow:
+        7px 7px 0 #260000,
+        -2px -2px 0 #111,
+        0 0 35px rgba(180,0,0,0.18);
+    transform: rotate(-0.4deg);
+}
+
+
+/* =========================================
+   HERO TEXT
+========================================= */
+
+.small-title {
+    color: #a00000;
+    margin-bottom: 18px;
+    font-family: monospace;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.hero h1 {
+    color: #ddd;
+    /* Applied Rubik Glitch font here for horror/hallucinogenic effect */
+    font-family: 'Rubik Glitch', Impact, Haettenschweiler, sans-serif;
+    font-size: clamp(55px, 9vw, 95px);
+    line-height: 0.9;
+    font-weight: 900;
+    font-style: italic;
+    letter-spacing: -2px;
+    text-shadow:
+        4px 4px 0 #000,
+        7px 7px 0 #420000;
+    transform: skew(-5deg);
+}
+
+.hero h1 span {
+    color: #c00000;
+}
+
+.hero-text {
+    color: #999;
+    max-width: 600px;
+    margin: 30px auto;
+    line-height: 1.6;
+    font-family: monospace;
+    font-size: 13px;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+button {
+    cursor: pointer;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+#heroBtn,
+#contactBtn {
+    color: #ddd;
+    background:
+        linear-gradient(
+            #b30000,
+            #690000
+        );
+    border: 2px solid #d00000;
+    border-top-color: #ef4444;
+    border-left-color: #ef4444;
+    padding: 13px 22px;
+    font-size: 13px;
+    letter-spacing: 1px;
+    box-shadow:
+        4px 4px 0 #000,
+        6px 6px 0 #330000;
+    text-transform: uppercase;
+}
+
+#heroBtn:hover,
+#contactBtn:hover {
+    color: #fff;
+    background: #d00000;
+    transform: translate(2px, 2px);
+    box-shadow:
+        2px 2px 0 #000;
+}
+
+
+/* =========================================
+   ANNOUNCEMENT
+========================================= */
+
+.announcement {
+    background: #970000;
+    color: #050505;
+    padding: 9px;
+    text-align: center;
+    border-top: 2px solid #d00000;
+    border-bottom: 3px solid #300000;
+    font-family: monospace;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+
+/* =========================================
+   SHOP
+========================================= */
+
+.shop {
+    max-width: 1200px;
+    margin: auto;
+    padding: 75px 25px;
+}
+
+.section-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 40px;
+}
+
+.section-title h2 {
+    color: #ccc;
+    font-family: Impact, Haettenschweiler, "Arial Black", sans-serif;
+    font-size: 30px;
+    font-style: italic;
+    letter-spacing: 2px;
+    text-shadow: 3px 3px 0 #000;
+}
+
+.section-title span {
+    color: #a00000;
+    font-family: monospace;
+    font-size: 20px;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+
+/* =========================================
+   PRODUCT CARDS
+========================================= */
+
+.product {
+    background: #0d0d0d;
+    border: 1px solid #4a0000;
+    box-shadow:
+        5px 5px 0 #000,
+        8px 8px 0 #260000;
+    transition: 0.15s;
+    position: relative;
+}
+
+.product:nth-child(2) {
+    transform: rotate(0.5deg);
+}
+
+.product:nth-child(3) {
+    transform: rotate(-0.5deg);
+}
+
+.product:hover {
+    border-color: #c00000;
+    transform:
+        translateY(-5px)
+        rotate(0deg);
+    box-shadow:
+        6px 10px 0 #000,
+        9px 13px 0 #300000;
+}
+
+
+/* =========================================
+   PRODUCT IMAGE CONTAINER
+========================================= */
+
+.product-image {
+    height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-bottom: 2px solid #700000;
+    overflow: hidden;
+    background: #000;
+}
+
+
+/* =========================================
+   PRODUCT INFO
+========================================= */
+
+.product-info {
+    padding: 20px;
+}
+
+.product-info h3 {
+    color: #ddd;
+    margin-bottom: 10px;
+    font-family: Impact, Haettenschweiler, "Arial Black", sans-serif;
+    font-size: 19px;
+    letter-spacing: 1px;
+}
+
+.product-info p {
+    color: #777;
+    margin-bottom: 15px;
+    font-family: monospace;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.product-info strong {
+    display: block;
+    color: #b00000;
+    margin-bottom: 15px;
+    font-family: monospace;
+    font-size: 20px;
+}
+
+.buy-btn {
+    width: 100%;
+    padding: 10px;
+    background: #151515;
+    color: #aaa;
+    border: 1px solid #700000;
+    font-family: monospace;
+    font-size: 11px;
+    letter-spacing: 1px;
+    box-shadow: 3px 3px 0 #000;
+}
+
+.buy-btn:hover {
+    background: #a00000;
+    color: #fff;
+    border-color: #d00000;
+}
+
+
+/* =========================================
+   ABOUT
+========================================= */
+
+.about {
+    padding: 70px 20px;
+    background: #080808;
+    border-top: 2px solid #300000;
+    border-bottom: 2px solid #300000;
+}
+
+.about-box {
+    max-width: 750px;
+    margin: auto;
+    padding: 40px;
+    text-align: center;
+    background: #0b0b0b;
+    border: 1px dashed #650000;
+    box-shadow: 6px 6px 0 #000;
+    transform: rotate(0.3deg);
+}
+
+.about h2,
+.contact h2 {
+    color: #ccc;
+    margin-bottom: 20px;
+    font-family: Impact, Haettenschweiler, "Arial Black", sans-serif;
+    font-size: 30px;
+    font-style: italic;
+}
+
+.about p {
+    color: #888;
+    margin-bottom: 15px;
+    font-family: monospace;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   STATUS
+========================================= */
+
+.status {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 8px 12px;
+    background: #030303;
+    border: 1px solid #333;
+    color: #555;
+    font-family: monospace;
+    font-size: 10px;
+}
+
+.online {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    margin-right: 6px;
+    background: #b00000;
+    border-radius: 50%;
+    box-shadow: 0 0 5px #b00000;
+}
+
+
+/* =========================================
+   CONTACT
+========================================= */
+
+.contact {
+    padding: 75px 20px;
+    background: #050505;
+    text-align: center;
+}
+
+.contact p {
+    color: #777;
+    margin-bottom: 25px;
+    font-family: monospace;
+    font-size: 13px;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    padding: 35px 20px;
+    background: #090909;
+    border-top: 3px solid #700000;
+    text-align: center;
+    color: #444;
+    font-family: monospace;
+    font-size: 10px;
+}
+
+.footer-logo {
+    color: #a00000;
+    margin-bottom: 10px;
+    font-family: 'Rubik Glitch', Impact, sans-serif;
+    font-size: 38px;
+    font-weight: 900;
+    font-style: italic;
+    text-shadow: 3px 3px 0 #000;
+}
+
+.footer-small {
+    margin-top: 12px;
+    color: #333;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 750px) {
+
+    .top-bar {
+        flex-direction: column;
+        gap: 4px;
+        text-align: center;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav li a {
+        padding: 8px 10px;
+        font-size: 10px;
+    }
+
+    .hero {
+        min-height: 450px;
+        padding: 40px 15px;
+    }
+
+    .hero-box {
+        padding: 35px 15px;
+    }
+
+    .hero h1 {
+        font-size: 50px;
+    }
+
+    .products {
+        grid-template-columns: 1fr;
+    }
+
+    .product:nth-child(2),
+    .product:nth-child(3) {
+        transform: none;
+    }
+
+    .section-title h2 {
+        font-size: 22px;
+    }
+
+}

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Checkout // WKTW Clothing Co.</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="wktw.css">
+</head>
+
+<body>
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <p>★ SECURE YOUR GEAR ★</p>
+        <p>EST. 2000 // ONLINE STORE</p>
+    </div>
+
+    <!-- NAVIGATION -->
+    <header>
+        <nav>
+            <div class="logo">
+                <span>WKTW</span>
+                <small>CLOTHING CO.</small>
+            </div>
+
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="index.html#shop">SHOP</a></li>
+                <li><a href="index.html#contact">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="checkout">
+
+        <div class="section-title">
+            <span>///</span>
+            <h2>CHECKOUT</h2>
+            <span>///</span>
+        </div>
+
+        <!-- EMPTY CART MESSAGE -->
+        <div id="checkoutEmpty" class="checkout-empty" hidden>
+            <p>/// YOUR CART IS EMPTY ///</p>
+            <a href="index.html#shop" class="checkout-link">BACK TO THE SHOP &gt;&gt;</a>
+        </div>
+
+        <!-- ORDER CONFIRMATION -->
+        <div id="checkoutDone" class="checkout-empty" hidden>
+            <p id="doneMessage"></p>
+            <a href="index.html" class="checkout-link">BACK TO HOME &gt;&gt;</a>
+        </div>
+
+        <div class="checkout-grid" id="checkoutGrid">
+
+            <!-- SHIPPING FORM -->
+            <form id="checkoutForm" class="checkout-box" novalidate>
+
+                <p class="project-label">/// SHIPPING DETAILS ///</p>
+
+                <div class="field">
+                    <label for="fullName">FULL NAME</label>
+                    <input type="text" id="fullName" name="fullName" autocomplete="name" required>
+                </div>
+
+                <div class="field">
+                    <label for="email">EMAIL</label>
+                    <input type="email" id="email" name="email" autocomplete="email" required>
+                </div>
+
+                <div class="field">
+                    <label for="address">STREET ADDRESS</label>
+                    <input type="text" id="address" name="address" autocomplete="street-address" required>
+                </div>
+
+                <div class="field-row">
+                    <div class="field">
+                        <label for="city">CITY</label>
+                        <input type="text" id="city" name="city" autocomplete="address-level2" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="state">STATE / REGION</label>
+                        <input type="text" id="state" name="state" autocomplete="address-level1" required>
+                    </div>
+                </div>
+
+                <div class="field-row">
+                    <div class="field">
+                        <label for="zip">ZIP / POSTAL CODE</label>
+                        <input type="text" id="zip" name="zip" autocomplete="postal-code" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="country">COUNTRY</label>
+                        <input type="text" id="country" name="country" value="United States" autocomplete="country-name" required>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label for="notes">ORDER NOTES (SIZING, CUSTOMIZATION)</label>
+                    <textarea id="notes" name="notes" rows="3"></textarea>
+                </div>
+
+                <!-- PAYMENT: connect Stripe / PayPal here (see instructions) -->
+                <p class="project-label">/// PAYMENT ///</p>
+                <div class="payment-note" id="paymentNote">
+                    Payment is not connected yet.
+                </div>
+
+                <p id="formError" class="form-error" hidden></p>
+
+                <button type="submit" class="checkout-btn place-order" id="placeOrderBtn">
+                    PLACE ORDER &gt;&gt;
+                </button>
+
+            </form>
+
+            <!-- ORDER SUMMARY -->
+            <aside class="checkout-box">
+
+                <p class="project-label">/// ORDER SUMMARY ///</p>
+
+                <div id="summaryItems"></div>
+
+                <div class="summary-line">
+                    <span>SUBTOTAL</span>
+                    <span id="subtotalAmount">$0.00</span>
+                </div>
+
+                <div class="summary-line">
+                    <span>SHIPPING</span>
+                    <span id="shippingAmount">$0.00</span>
+                </div>
+
+                <div class="summary-line total">
+                    <span>TOTAL</span>
+                    <strong id="totalAmount">$0.00</strong>
+                </div>
+
+                <a href="index.html#shop" class="checkout-link">&lt;&lt; KEEP SHOPPING</a>
+
+            </aside>
+
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-logo">WKTW</div>
+        <p>© 2026 WKTW CLOTHING CO. // ALL RIGHTS RESERVED</p>
+        <p class="footer-small">BEST VIEWED WITH A GOOD ATTITUDE ★</p>
+    </footer>
+
+    <script src="checkout.js"></script>
+
+</body>
+</html>
