@@ -491,7 +491,7 @@ button { cursor: pointer; font-family: monospace; font-weight: bold; }
 .about p {
     color: #888;
     margin-bottom: 15px;
-    font-family: monospace;
+    font-family: 'Rubik Glitch', Impact, sans-serif;
     font-size: 13px;
     line-height: 1.7;
 }
@@ -501,10 +501,10 @@ button { cursor: pointer; font-family: monospace; font-weight: bold; }
     display: inline-block;
     margin-top: 20px;
     padding: 8px 12px;
-    background: #030303;
+    background: #000000;
     border: 1px solid #333;
     color: #555;
-    font-family: monospace;
+    font-family: 'Rubik Glitch', Impact, sans-serif;
     font-size: 10px;
 }
 
@@ -529,8 +529,8 @@ footer {
     background: #090909;
     border-top: 3px solid #700000;
     text-align: center;
-    color: #444;
-    font-family: monospace;
+    color: #fffdfd;
+    font-family: 'Rubik Glitch', Impact, sans-serif;
     font-size: 10px;
 }
 
@@ -562,7 +562,7 @@ footer {
     width: min(720px, 100%);
     max-height: 90vh;
     overflow: auto;
-    background: #090909;
+    background: #000000;
     color: #ddd;
     border: 2px solid #8d0000;
     box-shadow: 8px 8px 0 #000, 12px 12px 0 #260000;
@@ -861,3 +861,45 @@ footer {
     .quantity-controls { flex-wrap: wrap; }
 }
 body { background: rgb(0, 0, 0) !important; }
+
+/* =========================================
+   METAL STUD BORDERS (left + right)
+========================================= */
+
+:root {
+    --stud-width: 40px; /* change this to make the borders thicker or thinner */
+}
+
+body {
+    padding-left: var(--stud-width);
+    padding-right: var(--stud-width);
+}
+
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: var(--stud-width);
+    z-index: 50;
+    background-image: url("Screenshot 2026-10-03 035002.png");
+    background-repeat: repeat-y;
+    background-size: 100% auto; /* scales the image to the strip width */
+    pointer-events: none;
+}
+
+body::before { left: 0; }
+body::after  { right: 0; }
+
+@media (max-width: 750px) {
+    :root { --stud-width: 20px; }
+}
+
+/* HERO BACKGROUND: repeating image instead of the red grid */
+.hero {
+    background-color: #070707; /* fallback if the image doesn't load */
+    background-image: url("studded.png");
+    background-repeat: repeat;
+    background-size: 40px auto; /* size of each tile */
+}
