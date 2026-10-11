@@ -117,9 +117,9 @@
 
                 <p id="formError" class="form-error" hidden></p>
 
-                <button type="submit" class="checkout-btn place-order" id="placeOrderBtn">
-                    PLACE ORDER &gt;&gt;
-                </button>
+                <div id="paypal-button-container"></div>
+
+<p id="paypal-msg" class="form-error" hidden></p>
 
             </form>
 
@@ -161,6 +161,9 @@
     </footer>
 
     <script src="checkout.js"></script>
+
+<script src="https://www.paypal.com/sdk/js?client-id=ARMnlvFHGGp4trSxV0qlRIv52QTn9Cy3ACilOB2XvfiyCOb5E1Zp2eCMzMksMe4RSoE5Pb3HfREGUgmR&currency=USD&intent=capture"></script>
+<script src="paypal-checkout.js"></script>
 
 </body>
 </html>

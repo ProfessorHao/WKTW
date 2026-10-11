@@ -3,7 +3,43 @@ document.addEventListener("DOMContentLoaded", function () {
     // =========================================
     // WKTW SHOPPING CART
     // =========================================
+// STUD BORDER SPARKLES
+(function () {
+    function makeSparkle(side) {
+        const s = document.createElement("span");
+        s.className = "stud-sparkle " + side;
+        s.textContent = "✦";
+        s.setAttribute("aria-hidden", "true");
 
+        function randomize() {
+            s.style.setProperty("--x", (Math.random() * 0.8 + 0.1).toFixed(2));
+            s.style.top = (Math.random() * 96 + 2).toFixed(1) + "%";
+            s.style.fontSize = (12 + Math.random() * 14).toFixed(0) + "px";
+        }
+
+        randomize();
+        s.style.animationDuration = (1.6 + Math.random() * 2.2).toFixed(2) + "s";
+        s.style.animationDelay = (Math.random() * 3).toFixed(2) + "s";
+        s.addEventListener("animationiteration", randomize);
+
+        document.body.appendChild(s);
+    }
+
+    for (let i = 0; i < 8; i++) {
+        makeSparkle("left");
+        makeSparkle("right");
+    }
+})();
+    // RETRO HIT COUNTER
+const hit = document.getElementById("hitCounter");
+if (hit) {
+    let n = 1337;
+    try {
+        n = (parseInt(localStorage.getItem("wktwHits"), 10) || 1336) + 1;
+        localStorage.setItem("wktwHits", n);
+    } catch (e) {}
+    hit.textContent = String(n).padStart(6, "0");
+}
     let cart = [];
 
     try {
